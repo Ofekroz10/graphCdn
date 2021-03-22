@@ -1,0 +1,63 @@
+<style>
+  body {
+    margin: 0;
+  }
+</style>
+<script src="https://cdn.tryretool.com/js/react.production.min.js" crossorigin></script>
+<script src="https://cdn.tryretool.com/js/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@material-ui/core@3.9.3/umd/material-ui.production.min.js"></script>
+
+
+<div id="react"></div>
+
+<style>
+  body {
+    margin: 0;
+  }
+</style>
+
+<script>
+var exports= {}
+</script>
+<script src="https://cdn.jsdelivr.net/gh/Ofekroz10/graphCdn/compressed.js"></script>
+
+<script type="text/babel">
+const DagreGraph = window["DagreGraph"];
+const options = {
+                rankdir: 'LR',
+                align: 'UL',
+                ranker: 'tight-tree'
+            };
+const nodes = {
+      id: "1",
+      label: "<h3>Node 1</h3>",
+      labelType: "html"
+    }
+
+const links = {}
+const MyCustomComponent = () => {
+   <div>
+        <DagreGraph
+            nodes={nodes}
+            links={links}
+            options={options}
+            width='500'
+            height='500'
+            animate={1000}
+            shape='circle'
+            fitBoundaries
+            zoomable
+            onNodeClick={e => console.log(e)}
+            onRelationshipClick={e => console.log(e)}
+        />
+    </div>
+}
+const ConnectedComponent = Retool.connectReactComponent(MyCustomComponent);
+  ReactDOM.render(<ConnectedComponent />, document.getElementById("react"));
+
+</script>
+
+
+
+
+
